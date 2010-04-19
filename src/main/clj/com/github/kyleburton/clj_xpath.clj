@@ -1,7 +1,6 @@
 (ns com.github.kyleburton.clj-xpath
   (:require
-   [clojure.contrib.str-utils :as str-utils]
-   [clojure.contrib.duck-streams :as ds])
+   [clojure.contrib.string :as string])
   (:import
    [java.io                     InputStream InputStreamReader StringReader File IOException ByteArrayInputStream]
    [org.xml.sax                 InputSource SAXException]
@@ -241,9 +240,9 @@
   (if with-attrs
     (let [[tag & attrs] tag-and-attrs]
       (format "%s %s" (name tag)
-              (str-utils/str-join " " (map (fn [[key val]]
-                                             (format "%s=\"%s\"" (if (keyword? key) (name key) key) val))
-                                           (partition 2 attrs)))))
+              (string/join " " (map (fn [[key val]]
+                                      (format "%s=\"%s\"" (if (keyword? key) (name key) key) val))
+                                    (partition 2 attrs)))))
     (name (first tag-and-attrs))))
 
 (defmethod format-tag clojure.lang.PersistentVector [tag-and-attrs & [with-attrs]]
