@@ -9,7 +9,7 @@
             :comments "Same as Clojure"}
   :warn-on-reflection true
   :jvm-opts ["-Xmx512M"]
-  :dev-dependencies [[swank-clojure "1.2.1"]]
+  :dev-dependencies [[swank-clojure "1.4.0-SNAPSHOT"]]
   :dependencies [[org.clojure/clojure "1.1.0"]
                  [org.clojure/clojure-contrib "1.1.0"]
                  [log4j/log4j "1.2.14"]
