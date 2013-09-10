@@ -1,3 +1,7 @@
 lib/
 clj-xpath-*.jar
 target/
+pom.xml
+.lein-deps-sum
+.lein-failures
+target
